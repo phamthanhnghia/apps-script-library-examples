@@ -11,5 +11,7 @@ This repository contains examples of using various Google Apps Script libraries.
 | CalendarApp       | Interact with Google Calendar.                   | [View Examples](./CalendarApp/README.md)                                 |
 | GmailApp          | Read and send emails with Gmail.                 | [View Examples](./GmailApp/README.md)                                    |
 | UrlFetchApp       | Fetch data from external APIs.                   | [View Examples](./UrlFetchApp/README.md)                                 |
+| Utilities         | Useful helper methods for data manipulation.     | [View Examples](./Utilities/README.md)                                   |
+
 
 
