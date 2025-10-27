@@ -1,36 +1,27 @@
-# ScriptApp Examples
+# ScriptApp & Trigger Management
 
-The `ScriptApp` library provides tools for managing triggers, OAuth tokens, and project settings.
+## Overview
 
-## Examples
+The `ScriptApp` service is a powerful tool for managing the script project itself. Its primary uses include programmatically creating and managing triggers, handling OAuth tokens for API calls, and monitoring service quotas.
 
-1. **Create a Time-Based Trigger**:  
-   Schedule a function to run every 5 minutes.
+This directory has been refactored to provide clear, robust examples for each of these functions. The multiple trigger-related scripts have been consolidated into a single, comprehensive `triggerManagement.gs` file.
 
-2. **List All Triggers**:  
-   Fetch and log all triggers in the current script project.
+---
 
-3. **Delete All Triggers**:  
-   Remove all existing triggers in the script project.
+## `triggerManagement.gs`
 
-4. **Get OAuth Token**:  
-   Retrieve the OAuth token for external API integrations.
+This script is a complete guide to managing triggers. It includes functions to:
+-   **Create Triggers**: Demonstrates creating time-based triggers (e.g., every 5 minutes, or at a specific future time) and event-driven triggers (e.g., `onEdit` for a Google Sheet).
+-   **List All Triggers**: A utility function to log every trigger currently active in the project.
+-   **Delete Triggers**: Includes a targeted function to delete triggers by their handler name (e.g., delete all triggers for `myFunction`), and a "delete all" function for complete cleanup.
 
-5. **Monitor Daily Quota**:  
-   Log the remaining daily quota for the script.
+## `getOAuthToken.gs`
 
-6. **Set a Specific Time Trigger**:  
-   Schedule a function to run at a specific date and time.
+This script has been enhanced to provide a much clearer explanation of `ScriptApp.getOAuthToken()`. It now:
+-   Explains what the OAuth token is and its security implications.
+-   Demonstrates how to safely log the token for debugging.
+-   Includes a practical example of using the token with `UrlFetchApp` to make an authorized call to the Google Drive API.
 
-7. **Create an Edit Trigger**:  
-   Create a trigger that activates when a Google Sheet is edited.
+## `monitorDailyQuota.gs`
 
-## Scripts
-
-- [Create a Time-Based Trigger](./createTimeTrigger.gs)
-- [List All Triggers](./listTriggers.gs)
-- [Delete All Triggers](./deleteTriggers.gs)
-- [Get OAuth Token](./getOAuthToken.gs)
-- [Monitor Daily Quota](./monitorDailyQuota.gs)
-- [Set a Specific Time Trigger](./setSpecificTimeTrigger.gs)
-- [Create an Edit Trigger](./createEditTrigger.gs)
+This script was improved to show how to check the remaining daily quota for multiple Google services (`MailApp`, `ContactsApp`, `DocumentApp`, etc.), not just the generic `ScriptApp` quota. This provides a more useful and complete picture for monitoring script execution limits.

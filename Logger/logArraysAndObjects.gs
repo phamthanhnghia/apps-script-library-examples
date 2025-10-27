@@ -1,8 +1,30 @@
-// This script logs arrays and JSON objects
+/**
+ * @description Demonstrates logging arrays and objects.
+ * The Apps Script logger provides an interactive, collapsible view for these data types.
+ * @see https://developers.google.com/apps-script/reference/base/logger#log(Object...)
+ */
 function logArraysAndObjects() {
-  var array = [1, 2, 3, 4, 5];
-  var object = { name: 'Alice', email: 'alice@example.com' };
+  const simpleArray = ['apple', 'banana', 'cherry'];
+  const complexObject = {
+    id: 123,
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    isActive: true,
+    roles: ['admin', 'editor'],
+    address: {
+      street: '123 Main St',
+      city: 'Anytown'
+    }
+  };
+
+  // It is not necessary to use JSON.stringify(). 
+  // Logger.log() handles objects and arrays directly, providing a better inspection UI.
+  Logger.log('Logging a simple array:');
+  Logger.log(simpleArray);
+
+  Logger.log('Logging a complex object:');
+  Logger.log(complexObject);
   
-  Logger.log('Array: %s', JSON.stringify(array)); // Logs array as a JSON string
-  Logger.log('Object: %s', JSON.stringify(object)); // Logs object as a JSON string
+  Logger.log('You can also log them together:');
+  Logger.log(simpleArray, complexObject);
 }

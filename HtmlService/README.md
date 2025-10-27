@@ -1,45 +1,35 @@
-# HtmlService Examples
+# HtmlService Examples & Workflows
 
-The `HtmlService` library allows you to create custom user interfaces using HTML, CSS, and JavaScript. These interfaces can be used in Google Sheets, Docs, Forms, or as standalone web apps.
+## Overview
 
-## Examples
+The `HtmlService` is a powerful Apps Script service that allows you to create custom user interfaces using standard web technologies (HTML, CSS, JavaScript). These interfaces can be displayed as web apps, sidebars, or modal dialogs within Google Workspace applications.
 
-1. **Create a Simple HTML Page**:  
-   Build and display a basic HTML page in a dialog.
+This directory has been refactored to provide a few distinct, comprehensive examples that demonstrate the core functionalities and common patterns of `HtmlService`.
 
-2. **Serve a Web App**:  
-   Create a standalone web app accessible via a URL.
+---
 
-3. **Use External CSS and JavaScript**:  
-   Load external styles and scripts into an HTML page.
+## Comprehensive Examples
 
-4. **Pass Data to HTML from Apps Script**:  
-   Send data from a script to an HTML page.
+### 1. `simpleWebApp.gs`
 
-5. **Retrieve Data from HTML to Apps Script**:  
-   Send data from the HTML page back to Apps Script.
+This script demonstrates how to create and serve a basic, standalone Google Apps Script Web App. It shows the `doGet()` function as the entry point and how to return `HtmlOutput` with embedded HTML and CSS. This is your "Hello World" for web apps in Apps Script.
 
-6. **Display a Sidebar in Google Sheets**:  
-   Show an HTML sidebar in Google Sheets.
+### 2. `sidebarDataExchange.gs`
 
-7. **Create a Modal Dialog**:  
-   Open an interactive modal dialog with custom HTML.
+This example showcases how to build an interactive HTML sidebar for Google Sheets, Docs, or Forms, and crucially, how to enable two-way communication between the client-side JavaScript in the sidebar and the server-side Apps Script code. It covers:
+-   Displaying a sidebar.
+-   Passing initial data from Apps Script to the HTML.
+-   Sending user input from the HTML back to Apps Script.
+-   Handling responses from Apps Script in the client.
 
-8. **Embed Charts in HTML**:  
-   Include Google Charts in your HTML interface.
+### 3. `modalDialogWithExternalAssets.gs`
 
-9. **Handle Events with JavaScript**:  
-   Respond to button clicks or form submissions in the HTML interface.
+This script demonstrates how to create a modal dialog and enhance its appearance and functionality by including external CSS (e.g., Bootstrap from a CDN) and external JavaScript (e.g., jQuery from a CDN). This is useful for creating more polished and interactive user interfaces.
 
+### 4. `embedCharts.gs`
 
-## Scripts
+This script shows how to embed dynamic Google Charts directly into an HTML output displayed as a modal dialog. It demonstrates how to pass data from Apps Script to the client-side JavaScript to render a visualization.
 
-- [Create a Simple HTML Page](./createSimpleHtmlPage.gs)
-- [Serve a Web App](./serveWebApp.gs)
-- [Use External CSS and JavaScript](./useExternalCssAndJs.gs)
-- [Pass Data to HTML from Apps Script](./passDataToHtml.gs)
-- [Retrieve Data from HTML to Apps Script](./retrieveDataFromHtml.gs)
-- [Display a Sidebar in Google Sheets](./displaySidebar.gs)
-- [Create a Modal Dialog](./createModalDialog.gs)
-- [Embed Charts in HTML](./embedCharts.gs)
-- [Handle Events with JavaScript](./handleEvents.gs)
+---
+
+These examples provide a solid foundation for building rich and interactive user interfaces with Google Apps Script.

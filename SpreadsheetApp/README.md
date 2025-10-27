@@ -1,24 +1,25 @@
-# SpreadsheetApp Examples
+# SpreadsheetApp Workflow Example
 
-The `SpreadsheetApp` library allows you to interact with Google Sheets, enabling tasks like reading, writing, and formatting data, as well as creating new sheets or modifying existing ones.
+## Overview
 
-## Examples
+The `SpreadsheetApp` service is one of the most powerful and commonly used services in Google Apps Script. It allows you to create, read, update, and format Google Sheets, enabling a vast range of automation possibilities.
 
-1. **Write Data to a Sheet**:  
-   Add a row of data to a specific sheet.
+This directory contains a single, comprehensive example script that demonstrates a full, practical workflow, replacing the previous collection of basic, separate files.
 
-2. **Read Data from a Range**:  
-   Retrieve and log values from a defined range.
+---
 
-3. **Format Cells**:  
-   Apply formatting like bold text, colors, or number formats to cells.
+## `fullSpreadsheetWorkflow.gs`
 
-4. **Create a New Sheet**:  
-   Add a new sheet to an existing spreadsheet.
+This script is a self-contained, end-to-end demonstration that requires no manual setup. When you run the `fullSpreadsheetWorkflow` function, it performs the following actions:
 
-## Scripts
+1.  **Creates a New Spreadsheet**: It generates a new Google Sheet with a unique name (e.g., "My Automated Report - 10/27/2025").
+2.  **Writes Data**: It populates the first sheet with structured data, including a header row and several rows of sample sales records.
+3.  **Applies Formatting**: It professionally formats the sheet by:
+    *   Making the header bold with a custom background and font color.
+    *   Applying currency and date number formats to the appropriate columns.
+    *   Automatically resizing columns to fit the content.
+4.  **Reads Data**: It reads all the data from the sheet back into the script and logs it, demonstrating data verification.
+5.  **Adds a New Sheet**: It creates a second sheet (tab) named "Summary" within the same spreadsheet.
+6.  **Logs the URL**: It prints the URL of the newly created spreadsheet to the execution log, so you can easily open it and see the results.
 
-- [Write Data to a Sheet](./writeData.gs)
-- [Read Data from a Range](./readData.gs)
-- [Format Cells](./formatCells.gs)
-- [Create a New Sheet](./createSheet.gs)
+This example serves as a robust starting point for anyone looking to automate tasks with Google Sheets.

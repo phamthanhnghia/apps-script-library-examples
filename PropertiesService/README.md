@@ -1,36 +1,30 @@
-# PropertiesService Examples
+# PropertiesService Demonstration
 
-The `PropertiesService` library is used to store and retrieve data that persists across script executions. You can manage properties at the script, user, or document level.
+## Overview
 
-## Examples
+The `PropertiesService` is a crucial service for storing simple string data in key-value pairs that persist between script executions. It's the standard way to manage script configuration, user preferences, or document-specific metadata without using a database or a spreadsheet.
 
-1. **Set and Get a Script Property**:  
-   Store and retrieve a value that is global to the script.
+This directory has been refactored to use a single, comprehensive script, `propertiesServiceDemo.gs`, which replaces the previous seven separate examples.
 
-2. **Set and Get a User Property**:  
-   Store and retrieve user-specific data.
+---
 
-3. **Set and Get a Document Property**:  
-   Store and retrieve data tied to a specific document.
+## Scopes of Properties
 
-4. **Delete a Property**:  
-   Remove a stored property.
+The `PropertiesService` provides three distinct scopes for storing data:
 
-5. **Log All Properties**:  
-   List all properties in a specific property store.
+1.  **Script Properties**: Data is accessible to all users of the script. Ideal for script-wide settings, such as an application version or a non-sensitive API key.
+2.  **User Properties**: Data is private to the user running the script. Each user has their own set of properties. Perfect for storing user-specific settings like a preferred theme or language.
+3.  **Document Properties**: Data is tied to the specific Google Doc, Sheet, or Form that the script is bound to. Useful for storing metadata about that particular file, like a version number or the last editor.
 
-6. **Clear All Properties**:  
-   Delete all properties in a property store.
+---
 
-7. **Use Properties for API Keys**:  
-   Securely store API keys for external integrations.
+## `propertiesServiceDemo.gs`
 
-## Scripts
+This single script provides a clear, runnable demonstration of all three property scopes. When you run the `demonstratePropertiesService` function, it will:
 
-- [Set and Get a Script Property](./setGetScriptProperty.gs)
-- [Set and Get a User Property](./setGetUserProperty.gs)
-- [Set and Get a Document Property](./setGetDocumentProperty.gs)
-- [Delete a Property](./deleteProperty.gs)
-- [Log All Properties](./logAllProperties.gs)
-- [Clear All Properties](./clearAllProperties.gs)
-- [Use Properties for API Keys](./usePropertiesForApiKeys.gs)
+1.  **Demonstrate Script Properties**: Set, retrieve, list, and delete properties shared by all users of the script.
+2.  **Demonstrate User Properties**: Set, retrieve, list, and delete properties private to the current user.
+3.  **Demonstrate Document Properties**: If the script is bound to a document, it will set, retrieve, list, and delete properties specific to that document.
+4.  **Include a Helper Function**: A `logProperties` utility is included to make it easy to view all keys and values in a given property store.
+
+This consolidated example provides a robust overview of how to effectively use `PropertiesService` in your projects.

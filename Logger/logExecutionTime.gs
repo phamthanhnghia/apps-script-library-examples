@@ -1,12 +1,20 @@
-// This script logs the execution time of a function
+/**
+ * @description Measures and logs the execution time of a specific operation.
+ * This is useful for identifying performance bottlenecks in your code.
+ */
 function logExecutionTime() {
-  var startTime = new Date();
-  
-  // Perform some operations
-  for (var i = 0; i < 100000; i++) {
-    Math.sqrt(i);
+  const startTime = new Date().getTime();
+
+  // --- Operation to be measured starts here ---
+  let message = '';
+  for (let i = 0; i < 10000; i++) {
+    // Simulating a task, like building a string or processing data.
+    message += 'a';
   }
-  
-  var endTime = new Date();
-  Logger.log('Execution Time: %s ms', endTime - startTime); // Logs the time difference
+  // --- Operation to be measured ends here ---
+
+  const endTime = new Date().getTime();
+  const executionTime = endTime - startTime;
+
+  Logger.log(`The operation took ${executionTime} milliseconds to complete.`);
 }
